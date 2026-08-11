@@ -28,6 +28,12 @@ int main(int argc, char** argv) {
         return -1;
     }
 
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 1280);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 720);
+
+    cv::namedWindow("Motion Detector (q to quit)", cv::WINDOW_NORMAL | cv::WINDOW_GUI_NORMAL);
+    cv::resizeWindow("Motion Detector (q to quit)", 1280, 720);
+
     cv::Mat prevFrame, currentFrame, gray, diff, thresh;
     
     std::cout << "Система обнаружения движения запущена." << std::endl;
