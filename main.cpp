@@ -2,10 +2,6 @@
 #include <fstream>
 #include <chrono>
 #include <opencv2/opencv.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/videoio.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/geometry/2d.hpp>
 
 std::string getCurrentTime() {
     auto now = std::chrono::system_clock::now();
@@ -27,12 +23,6 @@ int main(int argc, char** argv) {
         std::cerr << "Ошибка: Не удалось подключиться к камере." << std::endl;
         return -1;
     }
-
-    cap.set(cv::CAP_PROP_FRAME_WIDTH, 1280);
-    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 720);
-
-    cv::namedWindow("Motion Detector (q to quit)", cv::WINDOW_NORMAL | cv::WINDOW_GUI_NORMAL);
-    cv::resizeWindow("Motion Detector (q to quit)", 1280, 720);
 
     cv::Mat prevFrame, currentFrame, gray, diff, thresh;
     
