@@ -5,8 +5,8 @@ project(MotionDetector)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Ищем библиотеку OpenCV в системе
-find_package(OpenCV REQUIRED)
+# Ищем библиотеку OpenCV в системе (указываем нужные модули, чтобы не тянуть лишнее)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui videoio geometry)
 
 # Добавляем директории заголовочных файлов OpenCV
 include_directories(${OpenCV_INCLUDE_DIRS})

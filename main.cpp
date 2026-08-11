@@ -2,6 +2,10 @@
 #include <fstream>
 #include <chrono>
 #include <opencv2/opencv.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/videoio.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/geometry/2d.hpp>
 
 std::string getCurrentTime() {
     auto now = std::chrono::system_clock::now();
